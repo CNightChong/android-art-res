@@ -1,4 +1,4 @@
-package com.ryg.chapter_1;
+package com.chong.chapter01;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,20 +7,20 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class SecondActivity extends Activity {
-    private static final String TAG = "SecondActivity";
+public class ThirdActivity extends Activity {
+    private static final String TAG = "ThirdActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_third);
         findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                // 启动 ThirdActivity
                 Intent intent = new Intent();
-                intent.setClass(SecondActivity.this, ThirdActivity.class);
+                intent.setClass(ThirdActivity.this, MainActivity.class);
                 intent.putExtra("time", System.currentTimeMillis());
                 startActivity(intent);
             }
@@ -30,14 +30,12 @@ public class SecondActivity extends Activity {
 
     @Override
     protected void onStart() {
-        // TODO Auto-generated method stub
         super.onStart();
         Log.d(TAG, "onStart");
     }
 
     @Override
     protected void onResume() {
-        // TODO Auto-generated method stub
         super.onResume();
         Log.d(TAG, "onResume");
     }

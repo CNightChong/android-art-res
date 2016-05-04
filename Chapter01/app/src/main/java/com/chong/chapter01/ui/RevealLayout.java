@@ -1,4 +1,4 @@
-package com.ryg.chapter_1.ui;
+package com.chong.chapter01.ui;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -6,14 +6,13 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
-import com.ryg.chapter_1.R;
+import com.chong.chapter01.R;
 
 /**
  * 一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果，当它被点击的时候，

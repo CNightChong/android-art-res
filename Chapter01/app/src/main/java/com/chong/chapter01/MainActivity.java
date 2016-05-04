@@ -1,8 +1,5 @@
-package com.ryg.chapter_1;
+package com.chong.chapter01;
 
-import com.ryg.chapter_1.R;
-
-import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -22,38 +19,43 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState != null) {
             String test = savedInstanceState.getString("extra_test");
-            Log.d(TAG, "[onCreate]restore extra_test:" + test);
+            Log.d(TAG, "[onCreate]---restore extra_test:" + test);
         }
         findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent("com.ryg.charpter_1.c");
-                //intent.setClass(MainActivity.this, SecondActivity.class);
+                // 启动 ThirdActivity
+//                Intent intent = new Intent("com.chong.charpter_1.c");
+
+                // 启动 SecondActivity
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, SecondActivity.class);
+
                 intent.putExtra("time", System.currentTimeMillis());
-                intent.addCategory("com.ryg.category.c");
+                intent.addCategory("com.chong.category.c");
                 intent.setDataAndType(Uri.parse("file://abc"), "text/plain");
                 startActivity(intent);
             }
         });
     }
-    
+
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.d(TAG, "onNewIntent, time=" + intent.getLongExtra("time", 0));
+        Log.d(TAG, "onNewIntent, time====" + intent.getLongExtra("time", 0));
     }
 
     @Override
     protected void onStart() {
-        Log.d(TAG, "onStart");
         super.onStart();
+        Log.d(TAG, "onStart");
     }
 
     @Override
     protected void onResume() {
+        super.onResume();
         Log.d(TAG, "onResume");
-        super.onStart();
     }
 
     @Override
@@ -68,30 +70,30 @@ public class MainActivity extends Activity {
         Log.d(TAG, "onSaveInstanceState");
         outState.putString("extra_test", "test");
     }
-    
+
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         //Log.d(TAG, "onRestoreInstanceState");
         String test = savedInstanceState.getString("extra_test");
-        Log.d(TAG, "[onRestoreInstanceState]restore extra_test:" + test);
+        Log.d(TAG, "[onRestoreInstanceState]----restore extra_test:" + test);
     }
 
     @Override
     protected void onPause() {
-        Log.d(TAG, "onPause");
         super.onPause();
+        Log.d(TAG, "onPause");
     }
-    
+
     @Override
     protected void onStop() {
-        Log.d(TAG, "onStop");
         super.onStop();
+        Log.d(TAG, "onStop");
     }
-    
+
     @Override
     protected void onDestroy() {
-        Log.d(TAG, "onDestroy");
         super.onDestroy();
+        Log.d(TAG, "onDestroy");
     }
 }
