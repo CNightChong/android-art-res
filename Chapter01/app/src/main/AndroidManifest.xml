@@ -35,8 +35,8 @@
             android:launchMode="singleTask"
             android:taskAffinity="com.chong.task1">
             <intent-filter>
-                <action android:name="com.chong.charpter_1.c" />
-                <action android:name="com.chong.charpter_1.d" />
+                <action android:name="com.chong.charpter01.c" />
+                <action android:name="com.chong.charpter01.d" />
 
                 <category android:name="com.chong.category.c" />
                 <category android:name="com.chong.category.d" />

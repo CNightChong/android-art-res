@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // 启动 ThirdActivity
-//                Intent intent = new Intent("com.chong.charpter_1.c");
+//                Intent intent = new Intent("com.chong.charpter01.c");
 
                 // 启动 SecondActivity
                 Intent intent = new Intent();
