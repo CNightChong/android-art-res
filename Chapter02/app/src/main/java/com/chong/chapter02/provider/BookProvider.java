@@ -13,7 +13,7 @@ public class BookProvider extends ContentProvider {
 
     private static final String TAG = "BookProvider";
 
-    public static final String AUTHORITY = "com.ryg.chapter_2.book.provider";
+    public static final String AUTHORITY = "com.chong.chapter02.book.provider";
 
     public static final Uri BOOK_CONTENT_URI = Uri.parse("content://"
             + AUTHORITY + "/book");

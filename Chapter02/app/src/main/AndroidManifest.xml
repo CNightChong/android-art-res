@@ -64,7 +64,7 @@
             android:name=".ThirdActivity"
             android:configChanges="screenLayout"
             android:label="@string/app_name"
-            android:process="com.ryg.chapter_2.remote" />
+            android:process="com.chong.chapter02.remote" />
         <activity
             android:name=".aidl.BookManagerActivity"
             android:label="@string/title_activity_book_manager" >
@@ -86,7 +86,7 @@
             android:name=".messenger.MessengerService"
             android:process=":remote" >
             <intent-filter>
-                <action android:name="com.ryg.MessengerService.launch" />
+                <action android:name="com.chong.MessengerService.launch" />
             </intent-filter>
         </service>
         <service
@@ -107,7 +107,7 @@
         <provider
             android:name=".provider.BookProvider"
             android:authorities="com.chong.chapter02.book.provider"
-            android:permission="com.ryg.PROVIDER"
+            android:permission="com.chong.PROVIDER"
             android:process=":provider" >
         </provider>
 

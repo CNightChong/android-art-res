@@ -18,12 +18,12 @@ public class ProviderActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_provider);
-        // Uri uri = Uri.parse("content://com.ryg.chapter_2.book.provider");
+        // Uri uri = Uri.parse("content://com.chong.chapter02.book.provider");
         // getContentResolver().query(uri, null, null, null, null);
         // getContentResolver().query(uri, null, null, null, null);
         // getContentResolver().query(uri, null, null, null, null);
 
-        Uri bookUri = Uri.parse("content://com.ryg.chapter_2.book.provider/book");
+        Uri bookUri = Uri.parse("content://com.chong.chapter02.book.provider/book");
         ContentValues values = new ContentValues();
         values.put("_id", 6);
         values.put("name", "程序设计的艺术");
@@ -37,7 +37,7 @@ public class ProviderActivity extends Activity {
         }
         bookCursor.close();
 
-        Uri userUri = Uri.parse("content://com.ryg.chapter_2.book.provider/user");
+        Uri userUri = Uri.parse("content://com.chong.chapter02.book.provider/user");
         Cursor userCursor = getContentResolver().query(userUri, new String[]{"_id", "name", "sex"}, null, null, null);
         while (userCursor.moveToNext()) {
             User user = new User();

@@ -42,7 +42,7 @@ public class BookManagerService extends Service {
 
         public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
                 throws RemoteException {
-            int check = checkCallingOrSelfPermission("com.ryg.chapter_2.permission.ACCESS_BOOK_SERVICE");
+            int check = checkCallingOrSelfPermission("com.chong.chapter02.permission.ACCESS_BOOK_SERVICE");
             Log.d(TAG, "check=" + check);
             if (check == PackageManager.PERMISSION_DENIED) {
                 return false;
@@ -55,7 +55,7 @@ public class BookManagerService extends Service {
                 packageName = packages[0];
             }
             Log.d(TAG, "onTransact: " + packageName);
-            if (!packageName.startsWith("com.ryg")) {
+            if (!packageName.startsWith("com.chong")) {
                 return false;
             }
 
@@ -99,7 +99,7 @@ public class BookManagerService extends Service {
 
     @Override
     public IBinder onBind(Intent intent) {
-        int check = checkCallingOrSelfPermission("com.ryg.chapter_2.permission.ACCESS_BOOK_SERVICE");
+        int check = checkCallingOrSelfPermission("com.chong.chapter02.permission.ACCESS_BOOK_SERVICE");
         Log.d(TAG, "onbind check=" + check);
         if (check == PackageManager.PERMISSION_DENIED) {
             return null;

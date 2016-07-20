@@ -7,6 +7,9 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
 
+/**
+ * 参考Stub类和Stub类中Proxy类
+ */
 public class BookManagerImpl extends Binder implements IBookManager {
 
     /** Construct the stub at attach it to the interface. */

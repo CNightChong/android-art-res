@@ -60,7 +60,7 @@ public class MessengerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messenger);
-        Intent intent = new Intent("com.ryg.MessengerService.launch");
+        Intent intent = new Intent("com.chong.MessengerService.launch");
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
     }
     
