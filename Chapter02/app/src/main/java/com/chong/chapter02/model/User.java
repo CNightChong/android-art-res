@@ -50,8 +50,7 @@ public class User implements Parcelable, Serializable {
         userId = in.readInt();
         userName = in.readString();
         isMale = in.readInt() == 1;
-        book = in
-                .readParcelable(Thread.currentThread().getContextClassLoader());
+        book = in.readParcelable(Thread.currentThread().getContextClassLoader());
     }
 
     @Override

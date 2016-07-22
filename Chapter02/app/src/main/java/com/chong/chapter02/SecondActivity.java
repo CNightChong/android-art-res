@@ -41,16 +41,18 @@ public class SecondActivity extends Activity {
         super.onResume();
         User user = (User) getIntent().getSerializableExtra("extra_user");
         Log.d(TAG, "user:" + user.toString());
-        // Log.d(TAG, "UserManage.sUserId=" + UserManager.sUserId);
         recoverFromFile();
     }
 
+    /**
+     * 从文件中恢复对象，反序列化
+     */
     private void recoverFromFile() {
         new Thread(new Runnable() {
 
             @Override
             public void run() {
-                User user = null;
+                User user;
                 File cachedFile = new File(MyConstants.CACHE_FILE_PATH);
                 if (cachedFile.exists()) {
                     ObjectInputStream objectInputStream = null;

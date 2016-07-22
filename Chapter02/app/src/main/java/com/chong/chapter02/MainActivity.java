@@ -44,25 +44,28 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onResume() {
+        super.onResume();
         Log.d(TAG, "UserManage.sUserId=" + UserManager.sUserId);
         persistToFile();
-
-        super.onStart();
     }
 
+    /**
+     * 序列化对象
+     */
     private void persistToFile() {
         new Thread(new Runnable() {
 
             @Override
             public void run() {
                 User user = new User(1, "hello world", false);
-                File dir = new File(MyConstants.CHAPTER_2_PATH);
+                File dir = new File(MyConstants.CHAPTER_02_PATH);
                 if (!dir.exists()) {
                     dir.mkdirs();
                 }
                 File cachedFile = new File(MyConstants.CACHE_FILE_PATH);
                 ObjectOutputStream objectOutputStream = null;
                 try {
+                    // 序列化操作
                     objectOutputStream = new ObjectOutputStream(
                             new FileOutputStream(cachedFile));
                     objectOutputStream.writeObject(user);
