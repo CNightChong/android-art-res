@@ -1,14 +1,14 @@
 package com.chong.chapter03.utils;
 
-import java.io.Closeable;
-import java.io.IOException;
-import java.util.List;
-
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+
+import java.io.Closeable;
+import java.io.IOException;
+import java.util.List;
 
 public class MyUtils {
 

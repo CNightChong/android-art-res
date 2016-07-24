@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.chong.chapter03"
-        minSdkVersion 8
+        minSdkVersion 15
         targetSdkVersion 23
     }
 

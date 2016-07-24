@@ -1,10 +1,5 @@
 package com.chong.chapter03;
 
-import java.util.ArrayList;
-
-import com.chong.chapter03.ui.HorizontalScrollViewEx;
-import com.chong.chapter03.utils.MyUtils;
-
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,11 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
+
+import com.chong.chapter03.ui.HorizontalScrollViewEx;
+import com.chong.chapter03.utils.MyUtils;
+
+import java.util.ArrayList;
 
 public class DemoActivity_1 extends Activity {
     private static final String TAG = "DemoActivity_1";

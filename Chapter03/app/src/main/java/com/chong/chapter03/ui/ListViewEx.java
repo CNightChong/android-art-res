@@ -6,6 +6,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.ListView;
 
+/**
+ * 该view进行事件分发处理，决定父view是否拦截
+ * 配合 HorizontalScrollViewEx2 使用
+ */
 public class ListViewEx extends ListView {
     private static final String TAG = "ListViewEx";
 
@@ -38,24 +42,27 @@ public class ListViewEx extends ListView {
         int y = (int) event.getY();
 
         switch (event.getAction()) {
-        case MotionEvent.ACTION_DOWN: {
-            mHorizontalScrollViewEx2.requestDisallowInterceptTouchEvent(true);
-            break;
-        }
-        case MotionEvent.ACTION_MOVE: {
-            int deltaX = x - mLastX;
-            int deltaY = y - mLastY;
-            Log.d(TAG, "dx:" + deltaX + " dy:" + deltaY);
-            if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                mHorizontalScrollViewEx2.requestDisallowInterceptTouchEvent(false);
+            case MotionEvent.ACTION_DOWN: {
+                // 父view不拦截，自己处理
+                mHorizontalScrollViewEx2.requestDisallowInterceptTouchEvent(true);
+                break;
             }
-            break;
-        }
-        case MotionEvent.ACTION_UP: {
-            break;
-        }
-        default:
-            break;
+            case MotionEvent.ACTION_MOVE: {
+                int deltaX = x - mLastX;
+                int deltaY = y - mLastY;
+                Log.d(TAG, "dx:" + deltaX + " dy:" + deltaY);
+                // 水平滑动距离大于竖直滑动距离，横向滑动
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    // 父view拦截，父view处理
+                    mHorizontalScrollViewEx2.requestDisallowInterceptTouchEvent(false);
+                }
+                break;
+            }
+            case MotionEvent.ACTION_UP: {
+                break;
+            }
+            default:
+                break;
         }
 
         mLastX = x;
