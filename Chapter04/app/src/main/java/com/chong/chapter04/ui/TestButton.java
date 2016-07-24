@@ -5,8 +5,6 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 public class TestButton extends TextView {
-    private static final String TAG = "TestButton";
-
 
     public TestButton(Context context) {
         this(context, null);

@@ -1,10 +1,5 @@
 package com.chong.chapter04;
 
-import java.util.ArrayList;
-
-import com.chong.chapter04.ui.HorizontalScrollViewEx;
-import com.chong.chapter04.utils.MyUtils;
-
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,11 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
+
+import com.chong.chapter04.ui.HorizontalScrollViewEx;
+import com.chong.chapter04.utils.MyUtils;
+
+import java.util.ArrayList;
 
 public class DemoActivity_2 extends Activity {
     private static final String TAG = "DemoActivity_2";
@@ -62,7 +62,7 @@ public class DemoActivity_2 extends Activity {
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
-                    int position, long id) {
+                                    int position, long id) {
                 Toast.makeText(DemoActivity_2.this, "click item",
                         Toast.LENGTH_SHORT).show();
 

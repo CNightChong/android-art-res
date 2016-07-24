@@ -11,11 +11,6 @@ public class DemoActivity_1 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.demo_1);
-        initView();
-    }
-
-    private void initView() {
-
     }
 
 }

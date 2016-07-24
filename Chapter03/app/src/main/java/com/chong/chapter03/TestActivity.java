@@ -95,10 +95,10 @@ public class TestActivity extends Activity implements OnClickListener,
                 float fraction = animator.getAnimatedFraction();
                 // parentView.scrollTo 会移动所有子view的位置
                 View parentView = (View) mButton1.getParent();
-                parentView.scrollTo(-(startX + (int) (deltaX * fraction)), 0);
+//                parentView.scrollTo(-(startX + (int) (deltaX * fraction)), 0);
 
                 // mButton1.scrollTo会移动内容（文字）的位置
-//                mButton1.scrollTo(startX + (int) (deltaX * fraction), 0);
+                mButton1.scrollTo(startX + (int) (deltaX * fraction), 0);
 
                 // 通过log可以看到，parentView 的getLeft，getTop,getX()和getY()都  不会  变化
                 Log.d(TAG, "scroll parentView.left==" + parentView.getLeft());

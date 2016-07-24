@@ -13,6 +13,7 @@ import android.view.View;
 public class CircleView extends View {
 
     private int mColor = Color.RED;
+    // 开启抗锯齿
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public CircleView(Context context) {
@@ -43,6 +44,7 @@ public class CircleView extends View {
         int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
+        // 当宽高设置为 wrap_content时，默认200px
         if (widthSpecMode == MeasureSpec.AT_MOST
                 && heightSpecMode == MeasureSpec.AT_MOST) {
             setMeasuredDimension(200, 200);

@@ -62,7 +62,7 @@ public class DemoActivity_1 extends Activity {
         listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
-                    int position, long id) {
+                                    int position, long id) {
                 Toast.makeText(DemoActivity_1.this, "click item",
                         Toast.LENGTH_SHORT).show();
 

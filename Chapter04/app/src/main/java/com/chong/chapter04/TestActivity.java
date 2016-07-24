@@ -5,18 +5,19 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.MeasureSpec;
-import android.view.ViewTreeObserver;
 import android.view.View.OnClickListener;
+import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.Button;
-import android.widget.TextView;
+
+import com.chong.chapter04.ui.TestButton;
 
 public class TestActivity extends Activity implements OnClickListener {
 
     private static final String TAG = "TestActivity";
 
-    private Button view;
-    private View mButton2;
+    private Button mButton1;
+    private TestButton mButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,39 +28,50 @@ public class TestActivity extends Activity implements OnClickListener {
     }
 
     private void initView() {
-        view = (Button) findViewById(R.id.button1);
-        view.setOnClickListener(this);
-        mButton2 = (TextView) findViewById(R.id.button2);
+        mButton1 = (Button) findViewById(R.id.button1);
+        mButton1.setOnClickListener(this);
+        mButton2 = (TestButton) findViewById(R.id.button2);
     }
 
+    /**
+     * 得到mButton1测量宽高
+     */
     private void measureView() {
         int widthMeasureSpec = MeasureSpec.makeMeasureSpec((1 << 30) - 1, MeasureSpec.AT_MOST);
         int heightMeasureSpec = MeasureSpec.makeMeasureSpec(100, MeasureSpec.EXACTLY);
-        view.measure(widthMeasureSpec, heightMeasureSpec);
-        Log.d(TAG, "measureView, width= " + view.getMeasuredWidth() + " height= " + view.getMeasuredHeight());
+        mButton1.measure(widthMeasureSpec, heightMeasureSpec);
+        Log.d(TAG, "measureView, width = " + mButton1.getMeasuredWidth()
+                + " height = " + mButton1.getMeasuredHeight());
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        view.post(new Runnable() {
+        // 得到mButton1测量宽高
+        mButton1.post(new Runnable() {
 
             @Override
             public void run() {
-                int width = view.getMeasuredWidth();
-                int height = view.getMeasuredHeight();
+                int width = mButton1.getMeasuredWidth();
+                int height = mButton1.getMeasuredHeight();
+                Log.d(TAG, "post, width = " + width
+                        + " height = " + height);
             }
         });
 
-        ViewTreeObserver observer = view.getViewTreeObserver();
+
+        // 得到mButton1测量宽高
+        ViewTreeObserver observer = mButton1.getViewTreeObserver();
         observer.addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
 
             @SuppressWarnings("deprecation")
             @Override
             public void onGlobalLayout() {
-                view.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                int width = view.getMeasuredWidth();
-                int height = view.getMeasuredHeight();
+                mButton1.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                int width = mButton1.getMeasuredWidth();
+                int height = mButton1.getMeasuredHeight();
+                Log.d(TAG, "ViewTreeObserver, width = " + width
+                        + " height = " + height);
             }
         });
     }
@@ -68,17 +80,21 @@ public class TestActivity extends Activity implements OnClickListener {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
-            int width = view.getMeasuredWidth();
-            int height = view.getMeasuredHeight();
-            Log.d(TAG, "onWindowFocusChanged, width= " + view.getMeasuredWidth() + " height= " + view.getMeasuredHeight());
+            // 得到mButton1测量宽高
+            int width = mButton1.getMeasuredWidth();
+            int height = mButton1.getMeasuredHeight();
+            Log.d(TAG, "onWindowFocusChanged, width = " + width
+                    + " height= " + height);
         }
     }
 
     @Override
     public void onClick(View v) {
-        if (v == view) {
-            Log.d(TAG, "measure width= " + mButton2.getMeasuredWidth() + " height= " + mButton2.getMeasuredHeight());
-            Log.d(TAG, "layout width= " + mButton2.getWidth() + " height= " + mButton2.getHeight());
+        if (v == mButton1) {
+            Log.d(TAG, "measure width= " + mButton2.getMeasuredWidth()
+                    + " height= " + mButton2.getMeasuredHeight());
+            Log.d(TAG, "layout width= " + mButton2.getWidth()
+                    + " height= " + mButton2.getHeight());
         }
     }
 
