@@ -27,7 +27,6 @@ public class CustomDrawable extends Drawable {
     public void setAlpha(int alpha) {
         mPaint.setAlpha(alpha);
         invalidateSelf();
-
     }
 
     @Override

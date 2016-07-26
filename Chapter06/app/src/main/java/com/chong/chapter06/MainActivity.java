@@ -1,7 +1,5 @@
 package com.chong.chapter06;
 
-import com.chong.chapter06.ui.CustomDrawable;
-
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.ClipDrawable;
@@ -14,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chong.chapter06.ui.CustomDrawable;
+
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
 
@@ -23,11 +23,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         TextView textView = (TextView) findViewById(R.id.test_size);
         Drawable drawable = textView.getBackground();
-        Log.e(TAG, "bg:" + drawable + "w:" + drawable.getIntrinsicWidth()
-                + " h:" + drawable.getIntrinsicHeight());
-    }
-
-    public void onButtonClick(View v) {
+        Log.e(TAG, "bg:" + drawable + "------内部宽度：" + drawable.getIntrinsicWidth()
+                + "，内部高度：" + drawable.getIntrinsicHeight());
     }
 
     @Override
@@ -48,7 +45,7 @@ public class MainActivity extends Activity {
             ImageView testClip = (ImageView) findViewById(R.id.test_clip);
             ClipDrawable testClipDrawable = (ClipDrawable) testClip.getDrawable();
             testClipDrawable.setLevel(8000);
-            
+
             // test custom drawable
             View testCustomDrawable = findViewById(R.id.test_custom_drawable);
             CustomDrawable customDrawable = new CustomDrawable(Color.parseColor("#0ac39e"));

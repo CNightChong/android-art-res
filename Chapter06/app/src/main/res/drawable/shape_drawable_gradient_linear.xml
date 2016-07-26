@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle" >
+    android:shape="rectangle">
 
+    <!--centerColor  绿色-->
+    <!--endColor  蓝色-->
+    <!--startColor  红色-->
+    <!--从左到右，线性渐变-->
     <gradient
+        android:angle="0"
         android:centerColor="#00ff00"
-        android:endColor="#0000ff"
-        android:startColor="#ff0000"
         android:centerX="0.5"
         android:centerY="0.5"
-        android:angle="0"
+        android:endColor="#0000ff"
+        android:startColor="#ff0000"
         android:type="linear" />
 
 </shape>

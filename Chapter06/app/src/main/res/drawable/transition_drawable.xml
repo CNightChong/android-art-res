@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<transition xmlns:android="http://schemas.android.com/apk/res/android" >
+<transition xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@drawable/shape_drawable_gradient_linear"/>
-    <item android:drawable="@drawable/shape_drawable_gradient_radius"/>
+    <!--由线性渐变变化为径向渐变-->
+    <item android:drawable="@drawable/shape_drawable_gradient_linear" />
+    <item
+        android:bottom="5dp"
+        android:drawable="@drawable/shape_drawable_gradient_radius"
+        android:left="5dp"
+        android:right="10dp"
+        android:top="10dp" />
 
 </transition>

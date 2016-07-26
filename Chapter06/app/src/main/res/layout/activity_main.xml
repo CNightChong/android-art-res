@@ -1,20 +1,19 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="12dp" >
+        android:padding="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
+            <!--tileMode="repeat"-->
             <TextView
                 android:id="@+id/textView1"
                 android:layout_width="100dp"
@@ -23,6 +22,7 @@
                 android:gravity="center"
                 android:text="" />
 
+            <!--tileMode="mirror"-->
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="100dp"
@@ -33,6 +33,7 @@
                 android:gravity="center"
                 android:text="" />
 
+            <!--tileMode="clamp"-->
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="100dp"
@@ -46,14 +47,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
+            <!--圆角矩形-->
             <TextView
                 android:id="@+id/test_shape"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/shape_drawable" />
 
+            <!--虚线描边-->
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -61,6 +64,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/shape_drawable_stroke" />
 
+            <!--设置padding和size-->
             <TextView
                 android:id="@+id/test_size"
                 android:layout_width="100dp"
@@ -73,8 +77,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
+            <!--centerColor  绿色-->
+            <!--endColor  蓝色-->
+            <!--startColor  红色-->
+            <!--从左到右，线性渐变-->
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -82,6 +90,11 @@
                 android:gravity="center"
                 android:text="" />
 
+            <!--centerColor  绿色-->
+            <!--endColor  蓝色-->
+            <!--startColor  红色-->
+            <!--从内到外，径向渐变-->
+            <!--渐变半径60-->
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -91,6 +104,10 @@
                 android:gravity="center"
                 android:text="" />
 
+            <!--centerColor  绿色-->
+            <!--endColor  蓝色-->
+            <!--startColor  红色-->
+            <!--扫描渐变-->
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
@@ -103,8 +120,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
+            <!--由线性渐变变化为径向渐变-->
             <TextView
                 android:id="@+id/test_transition"
                 android:layout_width="100dp"
@@ -136,7 +154,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/test_clip"
