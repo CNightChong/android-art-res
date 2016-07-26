@@ -1,11 +1,8 @@
-package com.ryg.chapter_6;
+package com.chong.chapter06;
 
-import com.ryg.chapter_6.R;
-import com.ryg.chapter_6.ui.CustomDrawable;
+import com.chong.chapter06.ui.CustomDrawable;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.Drawable;

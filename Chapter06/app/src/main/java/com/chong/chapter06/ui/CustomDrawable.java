@@ -1,4 +1,4 @@
-package com.ryg.chapter_6.ui;
+package com.chong.chapter06.ui;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
