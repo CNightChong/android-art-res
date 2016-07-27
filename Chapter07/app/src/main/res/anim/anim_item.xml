@@ -4,6 +4,8 @@
     android:interpolator="@android:anim/accelerate_interpolator"
     android:shareInterpolator="true">
 
+    <!--透明度有0到1，在水平方向上从500平移到0的位置，持续300毫秒-->
+
     <alpha
         android:fromAlpha="0.0"
         android:toAlpha="1.0" />

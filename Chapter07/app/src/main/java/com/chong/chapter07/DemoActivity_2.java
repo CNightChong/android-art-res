@@ -39,7 +39,6 @@ public class DemoActivity_2 extends Activity {
         LayoutInflater inflater = getLayoutInflater();
         mListContainer = (HorizontalScrollViewEx) findViewById(R.id.container);
         final int screenWidth = MyUtils.getScreenMetrics(this).widthPixels;
-        final int screenHeight = MyUtils.getScreenMetrics(this).heightPixels;
         for (int i = 0; i < 1; i++) {
             ViewGroup layout = (ViewGroup) inflater.inflate(
                     R.layout.content_layout, mListContainer, false);
@@ -54,6 +53,7 @@ public class DemoActivity_2 extends Activity {
 
     private void createList(ViewGroup layout) {
         ListView listView = (ListView) layout.findViewById(R.id.list);
+        // item入场动画
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.anim_item);
         LayoutAnimationController controller = new LayoutAnimationController(animation);
         controller.setDelay(0.5f);
@@ -72,7 +72,7 @@ public class DemoActivity_2 extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(DemoActivity_2.this, "click item",
+                Toast.makeText(DemoActivity_2.this, "click item " + position,
                         Toast.LENGTH_SHORT).show();
 
             }

@@ -4,6 +4,8 @@
     android:layoutAnimation="@anim/anim_layout"
     android:orientation="vertical">
 
+    <!--button入场动画 透明度有0到1，在水平方向上从500平移到0的位置，持续300毫秒-->
+
     <Button
         android:id="@+id/button1"
         style="@style/AppTheme.Button.Green"
