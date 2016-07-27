@@ -2,7 +2,9 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android"
     android:duration="300"
     android:interpolator="@android:anim/accelerate_interpolator"
-    android:shareInterpolator="true" >
+    android:shareInterpolator="true">
+
+    <!--透明度有1到0，在竖直方向上从0平移到500的位置，持续300毫秒-->
 
     <alpha
         android:fromAlpha="1.0"

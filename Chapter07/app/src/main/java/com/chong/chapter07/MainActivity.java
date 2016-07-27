@@ -19,6 +19,8 @@ public class MainActivity extends Activity {
         if (v.getId() == R.id.button1) {
             Intent intent = new Intent(this, TestActivity.class);
             startActivity(intent);
+            // 下一个Activity 进入动画 透明度有0到1，在竖直方向上从500平移到0的位置，持续300毫秒
+            // 本Activity 退出动画 透明度有1到0，在竖直方向上从0平移到500的位置，持续300毫秒
             overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim);
         } else if (v.getId() == R.id.button2) {
             Intent intent = new Intent(this, DemoActivity_1.class);
