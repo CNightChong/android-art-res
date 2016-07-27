@@ -62,7 +62,8 @@
                 android:layout_height="100dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/shape_drawable_stroke" />
+                android:background="@drawable/shape_drawable_stroke"
+                android:text="hello world" />
 
             <!--设置padding和size-->
             <TextView
@@ -131,23 +132,23 @@
                 android:gravity="center"
                 android:text="" />
 
+            <!--内嵌-->
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/inset_drawable"
-                android:gravity="center"
-                android:text="" />
+                android:text="hello world" />
 
+            <!--缩放70%-->
             <TextView
                 android:id="@+id/test_scale"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/scale_drawable"
-                android:gravity="center"
-                android:text=""
-                android:textColor="#ffffff" />
+                android:text="hello world"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -156,12 +157,13 @@
             android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
+            <!--Drawable放在容器底部，竖直剪裁，从顶部开始剪裁-->
             <ImageView
                 android:id="@+id/test_clip"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:gravity="center"
-                android:src="@drawable/clip_drawable" />
+                android:src="@drawable/clip_drawable"
+                android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/test_custom_drawable"
@@ -174,6 +176,13 @@
                 android:textColor="#ffffff" />
 
         </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edit"
+            android:hint="@string/hello_world" />
     </LinearLayout>
 
 </ScrollView>

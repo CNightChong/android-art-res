@@ -2,4 +2,4 @@
 <clip xmlns:android="http://schemas.android.com/apk/res/android"
     android:clipOrientation="vertical"
     android:drawable="@drawable/image1"
-    android:gravity="bottom" />
+    android:gravity="bottom" /><!--Drawable放在容器底部，竖直剪裁，从顶部开始剪裁-->

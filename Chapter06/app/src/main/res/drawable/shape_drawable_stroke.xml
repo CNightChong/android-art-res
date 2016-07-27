@@ -10,4 +10,10 @@
         android:dashGap="2dp"
         android:dashWidth="10dp" />
 
+    <padding
+        android:bottom="5dp"
+        android:left="10dp"
+        android:right="5dp"
+        android:top="10dp" />
+
 </shape>

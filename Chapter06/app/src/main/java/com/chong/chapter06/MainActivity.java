@@ -44,6 +44,7 @@ public class MainActivity extends Activity {
             // test clip
             ImageView testClip = (ImageView) findViewById(R.id.test_clip);
             ClipDrawable testClipDrawable = (ClipDrawable) testClip.getDrawable();
+            // 顶部剪裁20%
             testClipDrawable.setLevel(8000);
 
             // test custom drawable

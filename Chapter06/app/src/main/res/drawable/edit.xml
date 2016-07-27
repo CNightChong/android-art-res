@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!--淡蓝色-->
     <item>
         <shape android:shape="rectangle">
             <solid android:color="#0ac39e" />
         </shape>
     </item>
 
+    <!--距离底部6dp-->
     <item android:bottom="6dp">
         <shape android:shape="rectangle">
             <solid android:color="#ffffff" />
         </shape>
     </item>
 
+    <!--距离底部1dp-->
+    <!--距离左边缘1dp-->
+    <!--距离又边缘1dp-->
     <item
         android:bottom="1dp"
         android:left="1dp"
