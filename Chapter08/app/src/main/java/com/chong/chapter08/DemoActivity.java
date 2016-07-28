@@ -6,8 +6,7 @@ import android.os.Bundle;
 import android.view.WindowManager.LayoutParams;
 import android.widget.TextView;
 
-public class DemoActivity_1 extends Activity {
-    private static final String TAG = "DemoActivity_1";
+public class DemoActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +16,11 @@ public class DemoActivity_1 extends Activity {
     }
 
     private void initView() {
-        Dialog dialog = new Dialog(this.getApplicationContext());
+        Dialog dialog = new Dialog(this);
         TextView textView = new TextView(this);
         textView.setText("this is toast!");
         dialog.setContentView(textView);
-        dialog.getWindow().setType(LayoutParams.TYPE_SYSTEM_ERROR);
+        dialog.getWindow().setType(LayoutParams.TYPE_APPLICATION);
         dialog.show();
     }
 

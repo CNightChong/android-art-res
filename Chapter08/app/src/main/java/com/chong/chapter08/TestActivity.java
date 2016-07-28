@@ -14,8 +14,6 @@ import android.widget.Button;
 
 public class TestActivity extends Activity implements OnTouchListener {
 
-    private static final String TAG = "TestActivity";
-
     private Button mCreateWindowButton;
 
     private Button mFloatingButton;
@@ -44,10 +42,10 @@ public class TestActivity extends Activity implements OnTouchListener {
             mLayoutParams.flags = LayoutParams.FLAG_NOT_TOUCH_MODAL
                     | LayoutParams.FLAG_NOT_FOCUSABLE
                     | LayoutParams.FLAG_SHOW_WHEN_LOCKED;
-            mLayoutParams.type = LayoutParams.TYPE_SYSTEM_ERROR;
+            mLayoutParams.type = LayoutParams.TYPE_APPLICATION;
             mLayoutParams.gravity = Gravity.LEFT | Gravity.TOP;
-            mLayoutParams.x = 100;
-            mLayoutParams.y = 300;
+            mLayoutParams.x = 300;
+            mLayoutParams.y = 500;
             mFloatingButton.setOnTouchListener(this);
             mWindowManager.addView(mFloatingButton, mLayoutParams);
         }

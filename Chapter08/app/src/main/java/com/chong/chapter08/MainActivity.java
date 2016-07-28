@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
             Intent intent = new Intent(this, TestActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.button2) {
-            Intent intent = new Intent(this, DemoActivity_1.class);
+            Intent intent = new Intent(this, DemoActivity.class);
             startActivity(intent);
         }
     }
