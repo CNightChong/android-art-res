@@ -5,7 +5,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.view.View;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,10 +23,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         scheduleThreads();
-
-    }
-
-    public void onButtonClick(View v) {
 
     }
 
@@ -94,10 +91,13 @@ public class MainActivity extends Activity {
 
         protected void onProgressUpdate(Integer... progress) {
             // setProgressPercent(progress[0]);
+            Log.d(TAG, "progress == " + progress[0]);
         }
 
         protected void onPostExecute(Long result) {
             // showDialog("Downloaded " + result + " bytes");
+            Log.d(TAG, "Downloaded " + result + " bytes");
+            Toast.makeText(MainActivity.this, "Downloaded " + result + " bytes", Toast.LENGTH_SHORT).show();
         }
     }
 

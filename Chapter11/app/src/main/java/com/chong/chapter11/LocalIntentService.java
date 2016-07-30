@@ -15,10 +15,10 @@ public class LocalIntentService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         String action = intent.getStringExtra("task_action");
-        Log.d(TAG, "receive task :" + action);
+        Log.d(TAG, "receive task === " + action);
         SystemClock.sleep(3000);
         if ("com.chong.action.TASK1".equals(action)) {
-            Log.d(TAG, "handle task: " + action);
+            Log.d(TAG, "handle task === " + action);
         }
     }
 
