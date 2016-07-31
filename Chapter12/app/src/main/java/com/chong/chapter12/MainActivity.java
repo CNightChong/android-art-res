@@ -20,13 +20,14 @@ import com.chong.chapter12.loader.ImageLoader;
 import com.chong.chapter12.utils.MyUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends Activity implements OnScrollListener {
     private static final String TAG = "MainActivity";
 
-    private List<String> mUrList = new ArrayList<String>();
-    ImageLoader mImageLoader;
+    private List<String> mUrList = new ArrayList<>();
+    private ImageLoader mImageLoader;
     private GridView mImageGridView;
     private BaseAdapter mImageAdapter;
 
@@ -41,7 +42,7 @@ public class MainActivity extends Activity implements OnScrollListener {
         setContentView(R.layout.activity_main);
         initData();
         initView();
-        mImageLoader = ImageLoader.build(MainActivity.this);
+        mImageLoader = ImageLoader.build(this);
     }
 
     private void initData() {
@@ -83,9 +84,7 @@ public class MainActivity extends Activity implements OnScrollListener {
                 "http://img02.tooopen.com/images/20140320/sy_57121781945.jpg",
                 "http://www.renyugang.cn/emlog/content/plugins/kl_album/upload/201004/852706aad6df6cd839f1211c358f2812201004120651068641.jpg"
         };
-        for (String url : imageUrls) {
-            mUrList.add(url);
-        }
+        Collections.addAll(mUrList, imageUrls);
         int screenWidth = MyUtils.getScreenMetrics(this).widthPixels;
         int space = (int) MyUtils.dp2px(this, 20f);
         mImageWidth = (screenWidth - space) / 3;
@@ -158,6 +157,7 @@ public class MainActivity extends Activity implements OnScrollListener {
             if (!uri.equals(tag)) {
                 imageView.setImageDrawable(mDefaultBitmapDrawable);
             }
+            // 停止滑动时加载
             if (mIsGridViewIdle && mCanGetBitmapFromNetWork) {
                 imageView.setTag(uri);
                 mImageLoader.bindBitmap(uri, imageView, mImageWidth, mImageWidth);
@@ -173,6 +173,7 @@ public class MainActivity extends Activity implements OnScrollListener {
 
     @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
+        // 停止状态
         if (scrollState == OnScrollListener.SCROLL_STATE_IDLE) {
             mIsGridViewIdle = true;
             mImageAdapter.notifyDataSetChanged();
